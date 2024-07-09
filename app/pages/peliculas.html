@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas</title>
+</head>
+<body>
+
+    <nav>
+        
+        <a href="/" ><button class="back">Volver</button></a>
+    </nav>
+    
+    <main>
+        <h1>Compra de Entradas</h1>
+        
+        <fieldset>
+        
+        <form>
+            
+            <label for="pelicula">Selecciona la pelicula</label>
+            <select name="pelicula" id="pelicula">
+            </select>
+            
+            <br>
+            
+            <label for="horario">Seleccione la hora</label>
+            <select name="horario" id="horario">
+            </select>
+
+            <br>
+
+            <label for="formato">Formato</label>
+            <!-- <input type="text" name="formato" id="formato" value=""  readonly disabled> -->
+             <select name="formato" id="formato" readonly disabled></select>
+            
+            
+            <br>
+
+            
+            <label for="asiento">Asiento</label>
+            <select name="asiento" id="asiento">
+            </select>
+            
+            <br>
+            
+            <label for="dni">Ingrese su dni</label>
+            <input type="text" name="dni" id="dni"
+             onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+             pattern="[0-9]{8}" minlength="8" maxlength="8" required placeholder="8 digitos">
+            <br>
+
+            <label for="monto">Monto</label>
+            <input type="text" name="monto" id="monto"  readonly disabled>
+            
+            <br>
+
+            <button type="submit" >Comprar Entradas</button>  
+        </form>
+        
+        </fieldset>
+    </main>
+
+    <footer>
+
+    </footer>
+<script src="./peliculasForm.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de usuario</title>
+    <link rel="stylesheet" href="sigin.css">
+</head>
+
+<body>
+    <nav id="navRegister">
+        <img src="https://user-images.githubusercontent.com/83146564/137408912-013f0d0c-37d1-4dc2-a1b5-77356c1003f3.png" alt="Logo codo a codo" class="imagen_codo">
+        <a href="/" ><button class="back">Volver</button></a>
+    </nav>
+
+    <header id="headerRegister">
+        <h1>Bienvenido</h1>
+        <h3>Cargue sus datos</h3>
+    </header>
+
+    <main>
+
+        <fieldset>
+
+        <form  id="registerForm">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" required><br>
+            
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido" required><br>
+
+            <label for="dni">DNI</label>
+            <input type="text" name="dni" id="dni"
+             onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+             pattern="[0-9]{8}" minlength="8" maxlength="8" required placeholder="8 digitos"><br>
+
+            <label for="pass">Contraseña</label>
+            <input type="password" name="pass" id="pass" required placeholder="*******"><br>
+
+            <label for="fec_nac">Fecha de Nacimiento</label>
+            <input type="date" name="fec_nac" id="fec_nac" required><br>
+
+            <button type="submit" id="submit">Carga de datos</button>
+        </form>
+        
+        </fieldset>
+
+    </main>
+
+       
+    <script src="./sigin.js"></script>
+</body>
+</html>
