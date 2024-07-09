@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             
             
             const horarioSelect = document.getElementById('horario');
-            horarioSelect.innerHTML = ''; 
+            horarioSelect.innerHTML = 'Hora'; 
             
             
             horarios.forEach(horario => {

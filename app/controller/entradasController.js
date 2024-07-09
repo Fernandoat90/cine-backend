@@ -18,7 +18,8 @@ const getEntradaById=(req,res) =>{
 )}
 
 const CreateEntradas= (req,res) =>{
-    const {id_usu,peli_id,asi_id,monto} =req.body;
+    const {peli_id,hora_id,formato_id,asi_id,dni,monto} =req.body;
+    
     const fecha = new Date();
     const anio = fecha.getFullYear();
     const mes = fecha.getMonth() + 1;
@@ -27,7 +28,7 @@ const CreateEntradas= (req,res) =>{
 
     const hour= new Date().toLocaleTimeString();
     const sql='INSERT INTO entradas(id_usu,sala_id,asi_id,fecha,hora,monto) VALUES (?,?,?,?,?,?)';
-    db.query(sql,[id_usu,peli_id,asi_id,day,hour,monto],(err,result)=>{
+    db.query(sql,[peli_id,hora_id,formato_id,asi_id,dni,monto],(err,result)=>{
         if(err) throw err;
         res.json('Entrada Reservada exitosamente');
     })

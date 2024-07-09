@@ -24,7 +24,6 @@ const getFormato = (req,res) =>{
 
 const getAsiento =(req,res)=>{
     const {pelis,hora,form} = req.params;
-    const sala="SELECT sala_id FROM salas WHERE pelis=? and hora_id=? and formato_id=?";
     const sql=`SELECT * FROM asiento INNER JOIN salas ON asiento.sala_id=salas.sala_id WHERE salas.peli_id=? and salas.hora_id=? and salas.formato_id=? AND asiento.disponible=true`;
     db.query(sql,[pelis,hora,form],(err,result)=>{
         if(err) throw err;

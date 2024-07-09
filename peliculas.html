@@ -17,30 +17,30 @@
         
         <fieldset>
         
-        <form>
+        <form id="compraEntradas">
             
             <label for="pelicula">Selecciona la pelicula</label>
-            <select name="pelicula" id="pelicula">
+            <select name="pelicula" id="pelicula" placeholder="Narnia">
             </select>
             
             <br>
             
             <label for="horario">Seleccione la hora</label>
-            <select name="horario" id="horario">
+            <select name="horario" id="horario" placeholder="13:00">
             </select>
 
             <br>
 
             <label for="formato">Formato</label>
             <!-- <input type="text" name="formato" id="formato" value=""  readonly disabled> -->
-             <select name="formato" id="formato" readonly disabled></select>
+             <select name="formato" id="formato" readonly disabled placeholder="$***"></select>
             
             
             <br>
 
             
             <label for="asiento">Asiento</label>
-            <select name="asiento" id="asiento">
+            <select name="asiento" id="asiento" placeholder="Selcciona una pelicula">
             </select>
             
             <br>
@@ -56,7 +56,7 @@
             
             <br>
 
-            <button type="submit" >Comprar Entradas</button>  
+            <button type="submit" id="submit" >Comprar Entradas</button>  
         </form>
         
         </fieldset>
