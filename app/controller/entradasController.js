@@ -53,38 +53,6 @@ const deleteEntradas= (req,res) =>{
     })
 }
 
-// const FrontCarga = (req, res) => {
-//     const { peli_id, hora_id, formato_id, asi_id, dni, monto } = req.body;
-
-    
-//         // Obtener sala_id
-//         const salaQuery = 'SELECT sala_id FROM salas WHERE peli_id=? AND hora_id=? AND formato_id=?';
-//         const sala_id = salaQuery;
-//         const salaResult =  db.query(salaQuery, [peli_id, hora_id, formato_id]);
-        
-
-//         // Obtener usu_id
-//         const usuQuery = 'SELECT usu_id FROM usuarios WHERE dni=?';
-//         const usu_id = usuQuery;
-//         const usuResult =  db.query(usuQuery, [dni]);
-        
-
-//         // Actualizar asiento
-//         const updateAsientoQuery = 'UPDATE asiento SET disponible=0 WHERE asi_id=?';
-//         db.query(updateAsientoQuery, [asi_id]);
-
-//         // Insertar entrada
-//         const fecha = new Date();
-//         const anio = fecha.getFullYear();
-//         const mes = fecha.getMonth() + 1;
-//         const dia = fecha.getDate();
-//         const day = `${anio}-${mes}-${dia}`;
-//         const hora= new Date().toLocaleTimeString();
-//         const insertEntradaQuery = 'INSERT INTO entradas (ent_id,id_usu, sala_id, asi_id, fecha, hora, monto) VALUES (NOT NULL,?, ?, ?, ?, ?, ?)';
-//          db.query(insertEntradaQuery, [usu_id, sala_id, asi_id, fecha, hora, monto]);
-
-//         res.json('Entrada Reservada exitosamen');
-// }
 
 const FrontCarga = async (req, res) => {
     const { pelicula,horario,formato,asiento,dni,monto } = req.body;
