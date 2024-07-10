@@ -13,8 +13,8 @@ document.getElementById('compraEntradas').addEventListener('submit', async funct
     };
   
     try {
-      const response = await fetch('/altaCompra', {
-        method: 'post',
+      const response = await fetch(`/altaCompra/carga`, {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -26,7 +26,7 @@ document.getElementById('compraEntradas').addEventListener('submit', async funct
       }
       
       alert('La compra se realizo con exito.');
-      document.getElementById('registerForm').reset();
+      document.getElementById('compraEntradas').reset();
       
       
     } catch(error) {

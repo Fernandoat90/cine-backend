@@ -34,14 +34,14 @@ router.delete('/pelis/:id',PelisControl.deletePeliculas);
 //rutas entradas localhost:3000/entradas
 router.get('/entradas/compras',EntradasControl.getAllEntradas);
 router.get('/entradas/:id',EntradasControl.getEntradaById);
-router.post('/altaCompra',EntradasControl.CreateEntradas);
+router.post('/entradas',EntradasControl.CreateEntradas);
 router.put('/entradas/:id',EntradasControl.uploadEntradas);
 router.delete('/entradas/:id',EntradasControl.deleteEntradas);
 
 router.get('/horas/:id',completeSelect.gethorarios);
 router.get('/formato/:pelis,:hora',completeSelect.getFormato);
 router.get('/asiento/:pelis,:hora,:form',completeSelect.getAsiento);
-
+router.post('/altaCompra/carga',EntradasControl.FrontCarga);
 
 
 

@@ -2,7 +2,7 @@ const db=require('../db/db_cine');
 
 const gethorarios = (req,res) =>{ 
     const {id} =req.params;
-    const sql="SELECT * FROM salas INNER JOIN horario ON salas.hora_id=horario.hora_id WHERE peli_id=?";
+    const sql="SELECT * FROM salas INNER JOIN horario ON salas.hora_id=horario.hora_id WHERE peli_id=? ORDER BY horario.hora_peli";
     db.query(sql,[id],(err,result)=>{
          if(err) throw err;
          

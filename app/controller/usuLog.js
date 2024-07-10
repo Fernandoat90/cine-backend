@@ -1,10 +1,10 @@
 const db=require('../db/db_cine');
 
 const getUsuLog = (req, res) => {
-    const { nombre, pass } = req.body; // Accede a los datos enviados desde el cliente
+    const { dni, pass } = req.body; // Accede a los datos enviados desde el cliente
 
-    const sql = 'SELECT * FROM usuarios WHERE nombre = ? AND pass = ?';
-    db.query(sql, [nombre, pass], (err, result) => {
+    const sql = 'SELECT * FROM usuarios WHERE dni = ? AND pass = ?';
+    db.query(sql, [dni, pass], (err, result) => {
         if (err) {
             console.error(err);
             res.status(500).json({ error: 'Error en la autenticación del usuario' });

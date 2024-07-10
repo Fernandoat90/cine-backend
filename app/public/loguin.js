@@ -3,7 +3,7 @@ document.getElementById('loguinForm').addEventListener('submit', async function(
 
     const formData = new FormData(this);
     const requestData = {
-        nombre: formData.get('nombre'),
+        dni: formData.get('dni'),
         pass: formData.get('pass')
     };
 
