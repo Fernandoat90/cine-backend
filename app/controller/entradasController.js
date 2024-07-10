@@ -37,7 +37,7 @@ const CreateEntradas= (req,res) =>{
 const uploadEntradas= (req,res) =>{
     const {id} =req.params;
     const {usu_id,peli_id,asi_id,fecha,hora,monto} = req.body;
-    const sql = 'UPDATE entradas SET usu_id=?,peli_id=?,asi_id=?,fecha=?,hora=?,monto=? WHERE ent_id=?';
+    const sql = 'UPDATE entradas SET usu_id=?,sala_id=?,asi_id=?,fecha=?,hora=?,monto=? WHERE ent_id=?';
     db.query(sql,[usu_id,peli_id,asi_id,fecha,hora,monto,id],(err,result)=>{
         if(err) throw err;
         res.json({mensage:'Entrada actualizada exitosamente'});

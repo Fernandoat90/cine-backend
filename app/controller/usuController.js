@@ -21,8 +21,8 @@ const db=require('../db/db_cine');
 
 const createNewUsu = (req, res) => {
     const { nombre, apellido, dni, pass, fec_nac } = req.body;
-    const fecha = new Date(fec_nac); // Convertir fec_nac a objeto Date
-    const fecha_nacimiento = fecha.toISOString().split('T')[0]; // Formato YYYY-MM-DD
+    const fecha = new Date(fec_nac); 
+    const fecha_nacimiento = fecha.toISOString().split('T')[0]; 
   
     const sql = 'INSERT INTO usuarios(nombre, apellido, dni, pass, fec_nac) VALUES (?, ?, ?, ?, ?)';
     db.query(sql, [nombre, apellido, dni, pass, fecha_nacimiento], (err, result) => {
