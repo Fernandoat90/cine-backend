@@ -1,7 +1,7 @@
 const db=require('../db/db_cine');
 
 const getAllEntradas= (req,res) =>{
-    const sql='SELECT entradas.ent_id,usuarios.nombre,usuarios.apellido,usuarios.dni,pelicula.titulo,formato.tipo,entradas.fecha,entradas.monto,horario.hora_peli AS Funcion_hora FROM entradas INNER JOIN usuarios ON entradas.id_usu=usuarios.id_usu INNER JOIN pelicula ON entradas.peli_id=pelicula.peli_id INNER JOIN formato ON pelicula.formato_id = formato.formato_id INNER JOIN horario ON pelicula.hora_id=horario.hora_id';
+    const sql='SELECT  entradas.ent_id,usuarios.nombre,usuarios.apellido,usuarios.dni,pelicula.titulo,formato.tipo,entradas.fecha,entradas.monto,horario.hora_peli AS Funcion_hora FROM entradas INNER JOIN usuarios ON entradas.id_usu = usuarios.id_usu INNER JOIN salas ON entradas.sala_id = salas.sala_id INNER JOIN  asiento ON entradas.asi_id = asiento.asi_id INNER JOIN pelicula ON salas.peli_id = pelicula.peli_id INNER JOIN formato ON salas.formato_id = formato.formato_id INNER JOIN horario ON salas.hora_id = horario.hora_id';
     db.query(sql,(err,result)=>{
         if(err) throw err;
         res.json(result); 
